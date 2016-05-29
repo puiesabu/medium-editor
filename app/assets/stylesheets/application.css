@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.container {
+  max-width: 730px;
+}
+
+.header {
+  text-align: center;
+}
+
+.footer {
+  font-weight: bold;
+}
+
+.footer hr {
+  border-top: 5px solid #000;
+}
