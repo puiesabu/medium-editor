@@ -1,0 +1,51 @@
+<%= form_for(post) do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subtitle %>
+    <%= f.text_field :subtitle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.hidden_field :content, html: {id: "content"} %>
+    <div class="editable" data-field-id="content">
+      <%= @post.content.html_safe %>
+    </div>
+    <script>
+      var editor = new MediumEditor('.editable');
+      $(".editable").bind("input propertychange", function() {
+        $("#post_" + $(this).attr("data-field-id")).val($(this).html());
+      });
+    </script>
+  </div>
+
+  <div class="field">
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
