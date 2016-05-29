@@ -25,7 +25,9 @@
     <%= f.label :content %>
     <%= f.hidden_field :content, html: {id: "content"} %>
     <div class="editable" data-field-id="content">
-      <%= @post.content.html_safe %>
+      <% if post.content? %>
+        <%= @post.content.html_safe %>
+      <% end %>
     </div>
     <script>
       var editor = new MediumEditor('.editable');
