@@ -12,17 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
   </div>
 
   <div class="field">
-    <%= f.label :subtitle %>
-    <%= f.text_field :subtitle %>
+    <%= f.label :issue %>
+    <%= f.text_field :issue %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
     <%= f.hidden_field :content, html: {id: "content"} %>
     <div class="editable" data-field-id="content">
       <% if post.content? %>
@@ -35,26 +34,6 @@
         $("#post_" + $(this).attr("data-field-id")).val($(this).html());
       });
     </script>
-  </div>
-
-  <div class="field">
-    <%= f.label :author %>
-    <%= f.text_field :author %>
-  </div>
-
-  <div class="field">
-    <%= f.label :issue %>
-    <%= f.text_field :issue %>
-  </div>
-
-  <div class="field">
-    <%= f.label :issue_month %>
-    <%= f.text_field :issue_month %>
-  </div>
-
-  <div class="field">
-    <%= f.label :category %>
-    <%= f.text_field :category %>
   </div>
 
   <div class="actions">
