@@ -14,4 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require medium-editor
+//= require handlebars
+//= require jquery-sortable
+//= require blueimp-file-upload
+//= require medium-editor-insert-plugin
 //= require_tree .
